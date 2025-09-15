@@ -9,7 +9,7 @@ services:
   - key: BOT_NAME
     value: shadowx
   - key: TASKS_URL
-    value: https://raw.githubusercontent.com/REPLACE_ME/archland/main/tasks.json
+    value: https://raw.githubusercontent.com/kalihatreese/archland/main/tasks.json
   - key: AUTH_TOKEN
     generateValue: true
   - key: SHIFT_START
