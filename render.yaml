@@ -1,0 +1,7 @@
+# Import each sub-service in Render dashboard by pointing to its subfolder.
+# This root file is informative only.
+includes:
+- bots/ashleyana/render.yaml
+- bots/shadowx/render.yaml
+- bots/jr/render.yaml
+- bots/autotrend_vault/render.yaml

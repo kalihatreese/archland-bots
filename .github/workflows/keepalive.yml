@@ -1,0 +1,13 @@
+name: keepalive
+on:
+  schedule: [{ cron: "*/10 * * * *" }]
+  workflow_dispatch: {}
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -s https://ashleyana-bot.onrender.com/  >/dev/null || true
+          curl -s https://shadowx-bot.onrender.com/   >/dev/null || true
+          curl -s https://jr-bot.onrender.com/        >/dev/null || true
+          curl -s https://autotrend-vault-bot.onrender.com/ >/dev/null || true

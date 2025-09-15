@@ -1,0 +1,5 @@
+[
+  {"id":"free-1","type":"advertise_free","limit":1000,"link":"https://example.com/keystone.apk","targets":["ashleyana","shadowx","jr","autotrend_vault"]},
+  {"id":"bundle-1","type":"bundle_models","targets":["ashleyana"]},
+  {"id":"post-1","type":"post_social","text":"Keystone App + Healthcare bot — first 1000 free. #AI #Android","targets":["shadowx","autotrend_vault"]}
+]
