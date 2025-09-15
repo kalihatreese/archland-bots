@@ -1,5 +1,44 @@
-[
-  {"id":"free-1","type":"advertise_free","limit":1000,"link":"https://example.com/keystone.apk","targets":["ashleyana","shadowx","jr","autotrend_vault"]},
-  {"id":"bundle-1","type":"bundle_models","targets":["ashleyana"]},
-  {"id":"post-1","type":"post_social","text":"Keystone App + Healthcare bot — first 1000 free. #AI #Android","targets":["shadowx","autotrend_vault"]}
-]
+{
+  "version": 1,
+  "tasks": [
+    {
+      "bot": "jr",
+      "id": "hc-001-train",
+      "desc": "Create healthcare model pipeline: load sample dataset, train baseline (scikit-learn LogisticRegression), persist model to models/healthcare/model.joblib, persist metadata to models/healthcare/manifest.json. CLI: python models/healthcare/train.py",
+      "deliverables": [
+        "models/healthcare/train.py",
+        "models/healthcare/model.joblib",
+        "models/healthcare/manifest.json",
+        "models/healthcare/requirements.txt"
+      ]
+    },
+    {
+      "bot": "shadowx",
+      "id": "hc-002-eval",
+      "desc": "Add eval script producing accuracy, precision, recall, ROC-AUC, confusion matrix PNG. Save to models/healthcare/reports/. CLI: python models/healthcare/eval.py --model models/healthcare/model.joblib",
+      "deliverables": [
+        "models/healthcare/eval.py",
+        "models/healthcare/reports/metrics.json",
+        "models/healthcare/reports/confusion_matrix.png"
+      ]
+    },
+    {
+      "bot": "ashleyana",
+      "id": "hc-003-api",
+      "desc": "Expose FastAPI /predict in bots/healthcare/app.py that loads model.joblib at startup. Accept JSON {features:[...]} and return {prob, label, model_version}. Add /health and /version. Add requirements. Start command stays uvicorn app:app.",
+      "deliverables": [
+        "bots/healthcare/app.py",
+        "bots/healthcare/requirements.txt"
+      ]
+    },
+    {
+      "bot": "autotrend_vault",
+      "id": "hc-004-release",
+      "desc": "Create release notes and README section for healthcare model. Verify /predict works locally and on Render. Add README.md badges and /health checks.",
+      "deliverables": [
+        "README.md (updated)",
+        "bots/healthcare/README.md"
+      ]
+    }
+  ]
+}
