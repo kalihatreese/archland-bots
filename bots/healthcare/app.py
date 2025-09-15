@@ -1,12 +1,16 @@
 from fastapi import FastAPI
-import os, httpx, datetime as dt
+import httpx, os
 
 app = FastAPI()
-BOT = os.getenv("BOT_NAME","healthcare")
+
+AUTOTREND_URL = os.getenv("AUTOTREND_URL","http://localhost:8090")
 
 @app.get("/health")
-def health(): return {"ok": True, "bot": BOT, "ts": dt.datetime.utcnow().isoformat()}
+def health():
+    return {"ok": True}
 
-@app.get("/triage")
-def triage(symptom: str):  # stub
-    return {"bot": BOT, "symptom": symptom, "advice": "This is not medical advice. See a clinician."}
+@app.get("/store/hot")
+async def store_hot(limit: int = 50, date: str | None = None):
+    async with httpx.AsyncClient(timeout=10) as cx:
+        r = await cx.get(f"{AUTOTREND_URL}/hot", params={"limit": limit, "date": date})
+    return r.json()
