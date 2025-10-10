@@ -1,0 +1,31 @@
+{
+  "doctrine_name": "Wealth and Prosperity Doctrine",
+  "version": "1.0.0",
+  "rules": {
+    "value_creation": "Prioritize scalable value output.",
+    "ownership": "Prefer appreciating assets.",
+    "compounding": "Reinvest free cash flow.",
+    "long_term_thinking": "Optimize for durability.",
+    "financial_literacy": "Improve knowledge of finance.",
+    "mindset_purpose": "Align mission and integrity.",
+    "adaptability": "Stay flexible to change.",
+    "risk_management": "Avoid ruin before profit.",
+    "tax_legal_structures": "Use compliant structures.",
+    "health_time_stewardship": "Protect energy and time."
+  },
+  "weights": {
+    "value_creation": 0.18,
+    "ownership": 0.14,
+    "compounding": 0.12,
+    "long_term_thinking": 0.1,
+    "financial_literacy": 0.1,
+    "mindset_purpose": 0.08,
+    "adaptability": 0.08,
+    "risk_management": 0.1,
+    "tax_legal_structures": 0.06,
+    "health_time_stewardship": 0.04
+  },
+  "metadata": {
+    "created_at": "2025-10-10T16:04:59.918829+00:00"
+  }
+}
